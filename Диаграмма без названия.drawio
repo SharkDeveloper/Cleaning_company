@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e" pages="2">
     <diagram name="Общее предсавление" id="9f46799a-70d6-7492-0946-bef42562c5a5">
-        <mxGraphModel dx="658" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+        <mxGraphModel dx="658" dy="307" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -64,7 +64,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="90ZcTQushnIKvJbsj3zl" name="личный кабинет">
-        <mxGraphModel dx="658" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="658" dy="307" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -118,7 +118,7 @@
                 <mxCell id="WFTGo0eZjpFftvzZyh6D-16" value="Регистрания и асторизация" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="230" width="100" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="WFTGo0eZjpFftvzZyh6D-18" value="Выбораная услуга&lt;br&gt;Размер территории&lt;br&gt;Описание ожиданий и нюансов, которые могут возникнкуть" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;labelBackgroundColor=none;" parent="1" source="WFTGo0eZjpFftvzZyh6D-3" target="WFTGo0eZjpFftvzZyh6D-17" edge="1">
+                <mxCell id="WFTGo0eZjpFftvzZyh6D-18" value="Выбораная услуга&lt;br&gt;Размер территории&lt;br&gt;Описание ожиданий и нюансов, которые могут возникнкуть&lt;br&gt;Желаемая дата" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=1;entryY=0;entryDx=0;entryDy=5;labelBackgroundColor=none;" parent="1" source="WFTGo0eZjpFftvzZyh6D-3" target="WFTGo0eZjpFftvzZyh6D-17" edge="1">
                     <mxGeometry x="0.0176" y="-25" relative="1" as="geometry">
                         <mxPoint x="495" y="265" as="sourcePoint"/>
                         <mxPoint as="offset"/>

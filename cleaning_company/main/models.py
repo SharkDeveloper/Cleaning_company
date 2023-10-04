@@ -1,5 +1,5 @@
 from django.db import models
-from django import forms
+
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
@@ -18,13 +18,9 @@ class Clients(models.Model):
         verbose_name = "Клиент"
         verbose_name_plural = "Клиент"
 
-class Order(models.Model):
-    name = models.CharField("Имя",max_length=50)
-    surename = models.CharField("Фамилия",max_length=50)
-    email = models.EmailField("Эл.почта",max_length=50)
-    phone = models.TextField("Телефон",max_length=11)
-    review = models.TextField("Напишите отзыв здесь")
-    rec_choices = models.TextChoices("Green","Red")
+class Orders(models.Model):
+    author = models.ForeignKey(Clients, on_delete=models.CASCADE)
+    review = models.TextField("")
     recommendation = models.CharField(max_length=5)
     suggestion = models.TextField("Что бы вы изменили в работе?")
 
