@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +53,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cleaning_company.urls'
 
-#обработка ошибок CSRF
+#пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ CSRF
 CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
 
 TEMPLATES = [
