@@ -1,10 +1,9 @@
 <!DOCTYPE html> <html lang="ru"> <head> <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanIt</title>
-<!--    {% extends 'base.html' %}-->
-<!--    {% block content %}-->
+    {% load sass_tags %}
     <!-- Стили CSS: -->
-<!--    {% load static %}-->
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="{% sass_src 'header.css' %}" rel="stylesheet">
     <!-- Подключение JS: -->
@@ -55,5 +54,4 @@
     <footer>
     </footer>
 </body>
-<!--{% endblock %}-->
 </html>
