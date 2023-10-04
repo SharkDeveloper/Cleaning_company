@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Базовый шаблон</title>
+    {% load static %}
+    <!-- Стили CSS: -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <!-- Подключение JS: -->
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+  {% block content %}
+  <!-- Здесь содержимое страницы -->
+  {% endblock %}
+</html>
