@@ -22,7 +22,7 @@ class Orders(models.Model):
     author = models.ForeignKey(Clients, on_delete=models.CASCADE)
     review = models.TextField("")
     recommendation = models.CharField(max_length=5)
-    suggestion = models.TextField("Что бы вы изменили в работе?")
+    suggestion = models.TextField("")
 
     def __str__(self) -> str:
         return self.email
