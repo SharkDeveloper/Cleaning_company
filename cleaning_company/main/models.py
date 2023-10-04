@@ -29,5 +29,5 @@ class Orders(models.Model):
     
     #переименование в админпанали название таблицы
     class Meta:
-        verbose_name = "Рекоментация"
-        verbose_name_plural = "Рекомендации"
+        verbose_name = "Закакз"
+        verbose_name_plural = "Заказы"
