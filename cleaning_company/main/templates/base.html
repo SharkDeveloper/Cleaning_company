@@ -33,6 +33,7 @@
     </div>
   </div>
   {% endif %}
+  {% if not request.path == '/account/' %}
   <div class="header-burger">
     <input type="checkbox" id="burger-toggle">
     <label for="burger-toggle" class="burger-menu">
@@ -59,6 +60,7 @@
       </div>
     </div>
   </div>
+  {% endif %}
   {% block content %}
   <!-- Здесь содержимое страницы -->
   {% endblock %}

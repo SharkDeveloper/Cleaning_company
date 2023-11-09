@@ -11,7 +11,7 @@ def about(request):
 
 
 def account(request):
-    return render(request, 'auth.html')
+    return render(request, 'account.html')
 
 
 def services(request):
