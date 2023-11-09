@@ -44,16 +44,16 @@
       <div class="menu-inner">
         <ul class="menu-nav">
           <li class="menu-nav-item"><a class="menu-nav-link" href="/"><span>
-                <div>Главная</div>
+                <div>Home</div>
               </span></a></li>
           <li class="menu-nav-item"><a class="menu-nav-link" href="/services/"><span>
-                <div>Услуги</div>
+                <div>Services</div>
               </span></a></li>
           <li class="menu-nav-item"><a class="menu-nav-link" href="/about/"><span>
-                <div>О нас</div>
+                <div>About</div>
               </span></a></li>
           <li class="menu-nav-item"><a class="menu-nav-link" href="/account/"><span>
-                <div>Аккаунт</div>
+                <div>Account</div>
               </span></a></li>
         </ul>
       </div>
@@ -62,6 +62,7 @@
   {% block content %}
   <!-- Здесь содержимое страницы -->
   {% endblock %}
+  {% if not request.path == '/account/' %}
   <footer>
     <ul class="footer-list">
     <li>
@@ -105,5 +106,6 @@
     <h3>ALL RIGHTS RESERVED<br>«CLEAN IT» 2023 © </h3>
   </div>
   </footer>
+  {% endif %}
 </body>
 </html>

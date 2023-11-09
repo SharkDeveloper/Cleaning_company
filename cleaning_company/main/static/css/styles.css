@@ -680,7 +680,7 @@ footer {
   margin-bottom: 8rem;
 }
 .card__price-value {
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-weight: 100;
   color: white;
 }
@@ -707,3 +707,24 @@ footer {
 .row .col-1-of-3 {
   width: calc((100% - 2 * 6rem) / 3);
 }
+.active {
+    border: 5px solid #1E90FF;
+}
+/* ABOUT */
+.aboutuspage-text {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #4682B4;
+}
+.aboutuspage-head {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+    margin-top: 50px;
+    font-size: 45px;
+    color: #4682B4;
+}
+/* ACCOUNT */
