@@ -21,7 +21,7 @@ def account(request):
         if user in Clients.objects.all():
             settings.CURRENT_USER = Clients.objects.get(name=user)
             return render(request, 'account.html', )
-    return render(request, 'auth.html')
+    return render(request, 'account.html')
 
 
 def services(request):
