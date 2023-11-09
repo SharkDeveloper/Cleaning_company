@@ -4,7 +4,6 @@ django-appconf==1.0.5
 django-compressor==4.4
 django-phonenumber-field==7.1.0
 django-sass-processor==1.2.2
-libsass==0.22.0
 phonenumbers==8.13.22
 rcssmin==1.1.1
 rjsmin==1.2.1
