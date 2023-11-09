@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phonenumber_field',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.(scss|sass)$'
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'main/static/css')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
