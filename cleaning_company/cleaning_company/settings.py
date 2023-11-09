@@ -117,14 +117,11 @@ USE_I18N = True
 
 USE_TZ = True
 
-SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r'^.+\.(scss|sass)$'
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'main/static/css')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
