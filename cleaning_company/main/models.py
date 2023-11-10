@@ -22,8 +22,8 @@ class Clients(models.Model):
 class Orders(models.Model):
     author = models.ForeignKey(Clients, on_delete=models.CASCADE)
     data = models.DateField("Дата заказа")
-    type_cleaning = models.CharField("Вариант уборки")
-    status = models.CharField("Статус заказа")
+    type_cleaning = models.CharField("Вариант уборки",max_length=50)
+    status = models.CharField("Статус заказа",max_length=50)
     price = models.IntegerField("Цена услуги")
 
     def __str__(self) -> str:
