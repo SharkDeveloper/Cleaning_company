@@ -40,7 +40,8 @@ def account(request):
         client.save()
     if not isinstance(settings.CURRENT_USER, str):
         context = {
-            "current_user": settings.CURRENT_USER
+            "current_user": settings.CURRENT_USER,
+            "orders": Orders.objects.filter(author=settings.CURRENT_USER)
         }
         print(settings.CURRENT_USER.name)
         return render(request, 'account.html', context)
