@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Clients, Orders
 from datetime import date
@@ -17,23 +18,43 @@ def about(request):
 
 
 def account(request):
+    if not isinstance(settings.CURRENT_USER, str):
+        print(1)
+        contex = {
+                "context":settings.CURRENT_USER
+            }
+        return render(request, 'account.html', context=contex )
     if request.method == 'POST' and 'login-app' in request.POST:
+        
         user = request.POST['username']
         password = request.POST['password']
-        if user in Clients.objects.all():
+        print(Clients.objects.filter(name=user, password=password).first())
+        if Clients.objects.filter(name=user, password=password).first():
             settings.CURRENT_USER = Clients.objects.filter(name=user, password=password).first()
-            return render(request, 'account.html', settings.CURRENT_USER)
+            contex = {
+                "context":settings.CURRENT_USER
+            }
+            return render(request, 'account.html', context=contex )
+    if request.method == 'POST' and 'reg-app' in request.POST:
+        client = Clients()
+        client.name = request.POST["username"]
+        client.email = request.POST["email"]
+        client.phone = request.POST["phone number"]
+        client.password = request.POST["password"]
+        client.save()
+        
     return render(request, 'auth.html')
 
 
 def services(request):
     if request.method == 'POST' and 'get-services' in request.POST:
-        if isinstance(settings.CURRENT_USER, str):
-            order = Orders()
-            order.author = settings.CURRENT_USER
-            order.data = date.today()
-            order.type_cleaning = type_cleaning[request.POST["order-id"]]["name"]
-            order.status = "Отправлен запрос"
-            order.price = type_cleaning[request.POST["order-id"]]["price"]
+        order = Orders()
+        order.author = settings.CURRENT_USER
+        order.data = date.today()
+        order.type_cleaning = type_cleaning[request.POST["order-id"]]["name"]
+        order.status = "Отправлен запрос"
+        order.price = type_cleaning[request.POST["order-id"]]["price"]
+        order.save()
+        return HttpResponseRedirect("/account")
 
     return render(request, 'services.html')
