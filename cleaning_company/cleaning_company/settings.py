@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["*","cleaningcompany-production.up.railway.app"]
 
 # Разрешение для csrf
-CSRF_TRUSTED_ORIGINS = ["cleaningcompany-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/"]
 
 
 
@@ -126,6 +126,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
