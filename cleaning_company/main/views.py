@@ -19,17 +19,15 @@ def about(request):
 
 def account(request):
     if not isinstance(settings.CURRENT_USER, str):
-        print(1)
         contex = {
                 "current-user":settings.CURRENT_USER
             }
         return render(request, 'account.html', context=contex )
     if request.method == 'POST' and 'login-app' in request.POST:
         
-        user = request.POST['username']
+        user = request.POST['login']
         password = request.POST['password']
-        print(Clients.objects.filter(name=user, password=password).first())
-        if Clients.objects.filter(name=user, password=password).first():
+        if Clients.objects.filter(login=user, password=password).first():
             settings.CURRENT_USER = Clients.objects.filter(name=user, password=password).first()
             contex = {
                 "current-user":settings.CURRENT_USER
@@ -37,10 +35,11 @@ def account(request):
             return render(request, 'account.html', context=contex )
     if request.method == 'POST' and 'reg-app' in request.POST:
         client = Clients()
-        client.name = request.POST["username"]
+        client.login = request.POST["login"]
         client.email = request.POST["email"]
         client.phone = request.POST["phone number"]
         client.password = request.POST["password"]
+        client.name = request.POST["username"]
         client.save()
         
     return render(request, 'auth.html')
