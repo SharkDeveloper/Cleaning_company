@@ -5,8 +5,8 @@ from datetime import date
 from django.conf import settings
 
 # Данные о типах уборки
-type_cleaning = [{"name": "suface cleaning", "price": 55.95}, {"name": "basic cleaning", "price": 85.45},
-                 {"name": "spring-cleaning", "price": 113.95}]
+type_cleaning = [{"name": "Suface cleaning", "price": 55.95}, {"name": "Basic cleaning", "price": 85.45},
+                 {"name": "Spring-cleaning", "price": 113.95}]
 
 
 def index(request):
@@ -56,7 +56,7 @@ def services(request):
             order.author = settings.CURRENT_USER
             order.data = date.today()
             order.type_cleaning = type_cleaning[int(request.POST["order-id"])]["name"]
-            order.status = "Отправлен запрос"
+            order.status = "In processing"
             order.price = type_cleaning[int(request.POST["order-id"])]["price"]
             order.save()
         return HttpResponseRedirect("/account")
