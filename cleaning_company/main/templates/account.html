@@ -29,33 +29,30 @@
       </li>
     </ul>
     <div class="account-info">
-      <div class="account-info-picture">
-      </div>
       <div class="account-info-name">{{ current_user.name }}</div>
-      </button>
     </div>
   </div>
   <div class="products-area-wrapper tableView">
     <div class="products-header">
       <div class="product-cell category">Category</div>
-      <div class="product-cell status-cell">Status<button class="sort-button"></div>
-      <div class="product-cell stock">Price<button class="sort-button">
-
-      </div>
+      <div class="product-cell status-cell">Status</div>
+      <div class="product-cell stock">Price</div>
       <div class="product-cell price">Date</div>
     </div>
+    {% for order in current_user.orders %}
     <div class="products-row">
       <button class="cell-more-button">
       </button>
       <div class="product-cell image">
-        <span>Spring-cleaning</span>
+        <span>{{order.type_cleaning}}</span>
       </div>
 
       <div class="product-cell status-cell">
-        <span class="status activeacc">Done</span>
+        <span class="status activeacc">order.status</span>
       </div>
-      <div class="product-cell sales"><span class="cell-label"></span>$114</div>
-      <div class="product-cell stock"><span class="cell-label"></span>02.04.2023</div>
+      <div class="product-cell sales"><span class="cell-label"></span>${{order.price}}</div>
+      <div class="product-cell stock"><span class="cell-label"></span>{{order.date}}</div>
     </div>
+    {% endfor %}
 </div>
 {% endblock %}
