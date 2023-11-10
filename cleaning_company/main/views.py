@@ -25,7 +25,8 @@ def account(request):
         if Clients.objects.filter(login=user, password=password).first():
             settings.CURRENT_USER = Clients.objects.filter(login=user, password=password).first()
             context = {
-                "current_user": settings.CURRENT_USER
+                "current_user": settings.CURRENT_USER,
+                "orders": Orders.objects.filter(author=settings.CURRENT_USER)
             }
             print(settings.CURRENT_USER.name)
             return render(request, 'account.html', context)
