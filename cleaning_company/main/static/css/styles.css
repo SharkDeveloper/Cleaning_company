@@ -717,6 +717,42 @@ footer {
     border: 5px solid #1E90FF;
 }
 /* ABOUT */
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+:root {
+  --magnifier: 6;
+  --gap: 1vmin;
+  --transition: 0.5s;
+}
+.features-body {
+  display: grid;
+  place-items: center;
+  margin-top: 50px;
+}
+.features {
+  width: 80vw;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  margin-bottom: 100px;
+}
+.features img {
+  --brightness: 0.75;
+  --grayscale: 1;
+  transition: flex var(--transition), filter var(--transition);
+  height: 100%;
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+  object-fit: cover;
+  overflow: hidden;
+  flex: 1;
+}
+.features img:hover {
+  --brightness: 1.15;
+  --grayscale: 0;
+  flex: var(--magnifier);
+}
 .aboutuspage-text {
     margin: 0 auto;
     text-align: center;
