@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Clients, Orders
-
+from datetime import date
 from django.conf import settings
 
 # Данные о типах уборки
@@ -27,8 +27,12 @@ def account(request):
 def services(request):
     if request.method == 'POST' and 'get-services' in request.POST:
         if isinstance(settings.CURRENT_USER, str):
-            client = Clients()
-            client.name = settings.CURRENT_USER
+            order = Orders()
+            order.author = settings.CURRENT_USER
+            order.data = date.today()
+            order.type_cleaning = type_cleaning[request.POST["order-id"]]["name"]
+            order.status = "Отправлен запрос"
+            order.price = type_cleaning[request.POST["order-id"]]["price"]
 
 
     return render(request, 'services.html')

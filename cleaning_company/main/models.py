@@ -7,7 +7,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 class Clients(models.Model):
     name = models.CharField("ФИО", max_length=50)
     email = models.EmailField("Эл.почта", max_length=50)
-    phone = PhoneNumberField("Телефон", max_length=50)
+    phone = models.CharField("Телефон", max_length=11)
     password = models.CharField("Пароль", max_length=20)
 
     def __str__(self) -> str:
@@ -21,9 +21,10 @@ class Clients(models.Model):
 
 class Orders(models.Model):
     author = models.ForeignKey(Clients, on_delete=models.CASCADE)
-    review = models.TextField("")
-    recommendation = models.CharField(max_length=5)
-    suggestion = models.TextField("")
+    data = models.DateField("Дата заказа")
+    type_cleaning = models.CharField("Вариант уборки")
+    status = models.CharField("Статус заказа")
+    price = models.IntegerField("Цена услуги")
 
     def __str__(self) -> str:
         return self.email
@@ -33,13 +34,3 @@ class Orders(models.Model):
         verbose_name = "закаказ"
         verbose_name_plural = "Заказы"
 
-
-class Services(models.Model):
-    name = models.CharField("Название услуги", max_length=50)
-    description = models.TextField("Описание", max_length=2000)
-    price = models.IntegerField("Цена")
-    pics = models.ImageField("Картинка")
-
-    class Meta:
-        verbose_name = "услугу"
-        verbose_name_plural = "Услуги"
