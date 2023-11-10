@@ -21,7 +21,7 @@ def account(request):
     if not isinstance(settings.CURRENT_USER, str):
         print(1)
         contex = {
-                "context":settings.CURRENT_USER
+                "current-user":settings.CURRENT_USER
             }
         return render(request, 'account.html', context=contex )
     if request.method == 'POST' and 'login-app' in request.POST:
@@ -32,7 +32,7 @@ def account(request):
         if Clients.objects.filter(name=user, password=password).first():
             settings.CURRENT_USER = Clients.objects.filter(name=user, password=password).first()
             contex = {
-                "context":settings.CURRENT_USER
+                "current-user":settings.CURRENT_USER
             }
             return render(request, 'account.html', context=contex )
     if request.method == 'POST' and 'reg-app' in request.POST:
