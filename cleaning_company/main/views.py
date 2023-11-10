@@ -21,19 +21,19 @@ def account(request):
     try:
         if not isinstance(settings.CURRENT_USER, str):
             contex = {
-                    "current-user":settings.CURRENT_USER
-                }
-            return render(request, 'account.html', context=contex )
+                "current-user": settings.CURRENT_USER
+            }
+            return render(request, 'account.html', context=contex)
         if request.method == 'POST' and 'login-app' in request.POST:
-            
+
             user = request.POST['login']
             password = request.POST['password']
             if Clients.objects.filter(login=user, password=password).first():
                 settings.CURRENT_USER = Clients.objects.filter(name=user, password=password).first()
                 contex = {
-                    "current-user":settings.CURRENT_USER
+                    "current-user": settings.CURRENT_USER
                 }
-                return render(request, 'account.html', context=contex )
+                return render(request, 'account.html', context=contex)
         if request.method == 'POST' and 'reg-app' in request.POST:
             client = Clients()
             client.login = request.POST["login"]
@@ -44,6 +44,7 @@ def account(request):
             client.save()
     except:
         return render(request, 'auth.html')
+    return render(request, 'auth.html')
 
 
 def services(request):

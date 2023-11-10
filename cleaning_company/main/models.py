@@ -27,9 +27,6 @@ class Orders(models.Model):
     status = models.CharField("Статус заказа",max_length=50)
     price = models.IntegerField("Цена услуги")
 
-    def __str__(self) -> str:
-        return self.email
-
     # переименование в админпанали название таблицы
     class Meta:
         verbose_name = "закаказ"
