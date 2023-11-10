@@ -1,5 +1,6 @@
 <head>
   <title>Login in CLEAN IT!</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <div class="content-container">
     <div class="login-page">
@@ -10,10 +11,36 @@
           <input name='password' type="password" placeholder="password"/>
           <button class="login-button" name="login-app"><p>LOGIN</p></button>
         </form>
-        <a href="/"><button class="exit-button"><p>EXIT</p></button></a>
+        <button class="to-reg-button" style="margin-top: 30px;"><p>REGISTRATION</p></button>
+        <a href="/"><button class="exit-button" style="margin-top: 15px;"><p>EXIT</p></button></a>
+      </div>
+    </div>
+    <div class="reg-page">
+      <div class="form">
+        <form method="POST" class="login-form">
+          {% csrf_token %}
+          <input name='username' type="text" placeholder="username"/>
+          <input name='e-mail' type="text" placeholder="e-mail"/>
+          <input name='phone number' type="text" placeholder="phone number"/>
+          <input name='password' type="password" placeholder="password"/>
+          <button class="reg-button" name="reg-app"><p>REGISTRATION</p></button>
+        </form>
+        <button class="to-login-button" style="margin-top: 30px;"><p>TO LOGIN</p></button>
+        <a href="/"><button class="exit-button" style="margin-top: 15px;"><p>EXIT</p></button></a>
       </div>
     </div>
 </div>
+<script>
+  $('.reg-page').css("display", "none");
+  $('.to-reg-button').click(function() {
+      $('.reg-page').css("display", "block");
+      $('.login-page').css("display", "none");
+  });
+  $('.to-login-button').click(function() {
+      $('.reg-page').css("display", "none");
+      $('.login-page').css("display", "block");
+  });
+</script>
 <style>
 * {
   font-family: "Montserrat", sans-serif;
