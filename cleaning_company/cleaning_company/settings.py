@@ -24,9 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-rmc51b)eb_bc-g@b(146z0*#v7-+1y2)e8h#=nl3!-&e^$9lds'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*","cleaningcompany-production.up.railway.app"]
+
+# Разрешение для csrf
+CSRF_TRUSTED_ORIGINS = ["cleaningcompany-production.up.railway.app"]
+
 
 
 # Application definition
