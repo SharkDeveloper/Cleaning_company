@@ -66,10 +66,13 @@
           </div>
         </div>
       </div>
-
-      <div class="u-center-text u-margin-top-huge">
-        <a href="#" class="btn btn--green">GET STARTED</a>
-      </div>
+      <form method="POST" class="order-form">
+        {% csrf_token %}
+        <input style="visibility: hidden;" name='order-id' type="number" id="order-input"/>
+        <div class="u-center-text u-margin-top-huge">
+          <button class="btn btn--green" name="order-app">MAKE ORDER</button>
+        </div>
+      </form>
     </section>
 </div>
 {% endblock %}

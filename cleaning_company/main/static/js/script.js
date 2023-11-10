@@ -4,6 +4,7 @@ $(document).ready(function() {
     });
     $('#select-1').click(function() {
         $(this).text('SELECTED!');
+        $('#order-input').val(0);
         $('#select-2').text('SELECT');
         $('#select-3').text('SELECT');
         $('#plan-1').addClass('active');
@@ -12,6 +13,7 @@ $(document).ready(function() {
     });
     $('#select-2').click(function() {
         $(this).text('SELECTED!');
+        $('#order-input').val(1);
         $('#select-1').text('SELECT');
         $('#select-3').text('SELECT');
         $('#plan-2').addClass('active');
@@ -20,10 +22,13 @@ $(document).ready(function() {
     });
     $('#select-3').click(function() {
         $(this).text('SELECTED!');
+        $('#order-input').val(2);
         $('#select-2').text('SELECT');
         $('#select-1').text('SELECT');
         $('#plan-3').addClass('active');
         $('#plan-1').removeClass('active');
         $('#plan-2').removeClass('active');
     });
+
+
 });
