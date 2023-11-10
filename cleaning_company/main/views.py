@@ -4,7 +4,9 @@ from datetime import date
 from django.conf import settings
 
 # Данные о типах уборки
-type_cleaning = [{"name":"suface cleaning","price":55.95}, {"name":"basic cleaning","price":85.45},{"name":"spring-cleaning","price":113.95}]
+type_cleaning = [{"name": "suface cleaning", "price": 55.95}, {"name": "basic cleaning", "price": 85.45},
+                 {"name": "spring-cleaning", "price": 113.95}]
+
 
 def index(request):
     return render(request, 'index.html')
@@ -19,7 +21,7 @@ def account(request):
         user = request.POST['username']
         password = request.POST['password']
         if user in Clients.objects.all():
-            settings.CURRENT_USER = Clients.objects.filter(name=user,password=password).first()
+            settings.CURRENT_USER = Clients.objects.filter(name=user, password=password).first()
             return render(request, 'account.html', settings.CURRENT_USER)
     return render(request, 'auth.html')
 
@@ -33,6 +35,5 @@ def services(request):
             order.type_cleaning = type_cleaning[request.POST["order-id"]]["name"]
             order.status = "Отправлен запрос"
             order.price = type_cleaning[request.POST["order-id"]]["price"]
-
 
     return render(request, 'services.html')
