@@ -4,7 +4,7 @@ from datetime import date
 from django.conf import settings
 
 # Данные о типах уборки
-type_cleaning = [{"name":"suface cleaning""price":55.95}, {"name":"basic cleaning","price":85.45},{"name":"spring-cleaning","price":113.95}]
+type_cleaning = [{"name":"suface cleaning","price":55.95}, {"name":"basic cleaning","price":85.45},{"name":"spring-cleaning","price":113.95}]
 
 def index(request):
     return render(request, 'index.html')
