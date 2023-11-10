@@ -4,7 +4,7 @@ from .models import Clients, Orders
 from django.conf import settings
 
 # Данные о типах уборки
-type_cleaning = [{"price:"},{},{}]
+type_cleaning = [{"name":"suface cleaning""price":55.95}, {"name":"basic cleaning","price":85.45},{"name":"spring-cleaning","price":113.95}]
 
 def index(request):
     return render(request, 'index.html')
@@ -19,9 +19,9 @@ def account(request):
         user = request.POST['username']
         password = request.POST['password']
         if user in Clients.objects.all():
-            settings.CURRENT_USER = Clients.objects.get(name=user)
-            return render(request, 'account.html', )
-    return render(request, 'account.html')
+            settings.CURRENT_USER = Clients.objects.filter(name=user,password=password).first()
+            return render(request, 'account.html', settings.CURRENT_USER)
+    return render(request, 'auth.html')
 
 
 def services(request):
@@ -29,7 +29,6 @@ def services(request):
         if isinstance(settings.CURRENT_USER, str):
             client = Clients()
             client.name = settings.CURRENT_USER
-            client.
 
 
     return render(request, 'services.html')
