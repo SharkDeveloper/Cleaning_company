@@ -50,14 +50,15 @@ def account(request):
         return render(request, 'auth.html')
 
 def services(request):
-    if request.method == 'POST' and 'get-services' in request.POST:
-        order = Orders()
-        order.author = settings.CURRENT_USER
-        order.data = date.today()
-        order.type_cleaning = type_cleaning[request.POST["order-id"]]["name"]
-        order.status = "Отправлен запрос"
-        order.price = type_cleaning[request.POST["order-id"]]["price"]
-        order.save()
+    if request.method == 'POST' and 'order-app' in request.POST:
+        if not isinstance(settings.CURRENT_USER, str):
+            order = Orders()
+            order.author = settings.CURRENT_USER
+            order.data = date.today()
+            order.type_cleaning = type_cleaning[int(request.POST["order-id"])]["name"]
+            order.status = "Отправлен запрос"
+            order.price = type_cleaning[int(request.POST["order-id"])]["price"]
+            order.save()
         return HttpResponseRedirect("/account")
 
     return render(request, 'services.html')
