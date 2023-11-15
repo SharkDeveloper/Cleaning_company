@@ -136,5 +136,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#костыль
+#Отслеживание текущего пользователя
 CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'static', 'current_user')
