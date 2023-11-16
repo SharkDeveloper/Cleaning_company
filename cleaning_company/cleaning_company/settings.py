@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-rmc51b)eb_bc-g@b(146z0*#v7-+1y2)e8h#=nl3!-&e^$9lds
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*","cleaningcompany-production.up.railway.app"]
+ALLOWED_HOSTS = ["*","https://cleaningcompany-production.up.railway.app"]
 
 # Разрешение для csrf
 CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/"]
