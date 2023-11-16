@@ -29,7 +29,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["*","https://cleaningcompany-production.up.railway.app"]
 
 # Разрешение для csrf
-CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = ["cleaningcompany-production.up.railway.app/"]
 
 
 
@@ -127,7 +127,7 @@ USE_TZ = True
 
 STATIC_URL = '/cleaning_company/main/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "cleaning_company/staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
