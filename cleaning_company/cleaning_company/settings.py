@@ -141,15 +141,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Отслеживание текущего пользователя
 CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'current_user')
 
-#Определение типо MIME 
-"""MIME_TYPES = {
-    'application/javascript': ['js'],
-    'text/css': ['css'],
-}"""
-
-#отключение првоерки на MIME типы
-#SECURE_CONTENT_TYPE_NOSNIFF = False
-
-mimetypes.add_type("text/css", ".css", True)
-mimetypes.add_type("application/javascript", ".js", True)
-mimetypes.add_type('text/html', ".html", True)

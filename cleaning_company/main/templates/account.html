@@ -39,20 +39,27 @@
       <div class="product-cell stock">Price</div>
       <div class="product-cell price">Date</div>
     </div>
-    {% for order in current_user.orders %}
+    {% for order in orders %}
     <div class="products-row">
       <button class="cell-more-button">
       </button>
       <div class="product-cell image">
-        <span>{{order.type_cleaning}}</span>
+        <span>{{ order.type_cleaning }}</span>
       </div>
 
       <div class="product-cell status-cell">
-        <span class="status activeacc">order.status</span>
+        {% if order.status == 'Done' %}
+        <span class="status activeacc">{{ order.status }}</span>
+        {%endif%}
+        {%if order.status == 'In processing'%}
+        <span class="status disabled">{{ order.status }}</span>
+        {%endif%}
       </div>
-      <div class="product-cell sales"><span class="cell-label"></span>${{order.price}}</div>
-      <div class="product-cell stock"><span class="cell-label"></span>{{order.date}}</div>
+      <div class="product-cell sales"><span class="cell-label"></span>${{ order.price }}</div>
+      <div class="product-cell stock"><span class="cell-label"></span>{{ order.data }}</div>
     </div>
     {% endfor %}
+  </div>
+  </div>
 </div>
 {% endblock %}
