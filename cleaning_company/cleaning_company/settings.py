@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-rmc51b)eb_bc-g@b(146z0*#v7-+1y2)e8h#=nl3!-&e^$9lds'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*","https://cleaningcompany-production.up.railway.app"]
 
@@ -137,7 +137,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Отслеживание текущего пользователя
-CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'static', 'current_user')
+CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'current_user')
 
 #Определение типо MIME 
 MIME_TYPES = {
