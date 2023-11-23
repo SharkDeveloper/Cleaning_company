@@ -30,7 +30,7 @@ DEBUG = False
 ALLOWED_HOSTS = ["*","https://cleaningcompany-production.up.railway.app","cleaningcompany-production.up.railway.app"]
 
 # Разрешение для csrf
-CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/","http://cleaningcompany-production.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/"]
 
 
 
