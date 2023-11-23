@@ -138,7 +138,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Отслеживание текущего пользователя
-CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'current_user')
+#CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'current_user')
 
 #Определение типо MIME 
 """MIME_TYPES = {
