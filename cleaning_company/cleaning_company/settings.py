@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-rmc51b)eb_bc-g@b(146z0*#v7-+1y2)e8h#=nl3!-&e^$9lds'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*","https://cleaningcompany-production.up.railway.app"]
 
 # Разрешение для csrf
-CSRF_TRUSTED_ORIGINS = ["cleaningcompany-production.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/","http://cleaningcompany-production.up.railway.app/"]
 
 
 
@@ -125,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/main/static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
@@ -138,3 +138,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Отслеживание текущего пользователя
 CURRENT_USER = os.path.join(os.path.dirname(BASE_DIR), 'static', 'current_user')
+
+#Определение типо MIME 
+MIME_TYPES = {
+    'application/javascript': ['js'],
+    'text/css': ['css'],
+}
+
+#отключение првоерки на MIME типы
+#SECURE_CONTENT_TYPE_NOSNIFF = False
