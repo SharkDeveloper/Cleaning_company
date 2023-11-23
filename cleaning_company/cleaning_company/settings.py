@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-rmc51b)eb_bc-g@b(146z0*#v7-+1y2)e8h#=nl3!-&e^$9lds'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*","https://cleaningcompany-production.up.railway.app","https://cleaningcompany-production.up.railway.app/account/","cleaningcompany-production.up.railway.app"]
 
 # Разрешение для csrf
-CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/admin/login/?next=/admin/"]
+CSRF_TRUSTED_ORIGINS = ["https://cleaningcompany-production.up.railway.app/account/"]
 
 
 
